@@ -12,10 +12,8 @@ class Employee {
 
     @Override
     public boolean equals(Object o) {
-        if (this == o)
-            return true;
-        if (o == null || getClass() != o.getClass())
-            return false;
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
         Employee employee = (Employee) o;
         return id == employee.id && Objects.equals(name, employee.name);
     }
@@ -25,17 +23,14 @@ class Employee {
         return Objects.hash(name, id);
     }
 
+    // Implement missing getters
     public String getName() {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'getName'");
+        return name;
     }
 
-    public String getId() {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'getId'");
+    public int getId() {
+        return id;
     }
-
-    // Getters and setters (optional)
 }
 
 public class EmployeeManagement {
@@ -56,11 +51,13 @@ public class EmployeeManagement {
     }
 
     public static void main(String[] args) {
+
         EmployeeManagement management = new EmployeeManagement();
 
         management.addEmployee(new Employee("Alice", 123));
         management.addEmployee(new Employee("Bob", 456));
-        management.addEmployee(new Employee("Alice", 123)); // Duplicate, won't be added
+        // Duplicate employee won't be added due to HashSet behavior
+        management.addEmployee(new Employee("Alice", 123));
 
         management.displayEmployees();
     }
