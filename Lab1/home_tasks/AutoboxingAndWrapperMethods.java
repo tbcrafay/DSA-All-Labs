@@ -5,6 +5,7 @@ public class AutoboxingAndWrapperMethods {
         Integer intObj = num; // Autoboxing
 
         // Unboxing: Converting wrapper object to primitive
+        @SuppressWarnings("unused")
         int num2 = intObj; // Unboxing
 
         // Wrapper class methods
